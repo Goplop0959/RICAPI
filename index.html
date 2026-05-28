@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast & Compliment API - Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #e0e0e0; min-height: 100vh; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #ff6b6b; margin-bottom: 40px; }
+        h1 { font-size: 3em; background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+        .subtitle { color: #a0a0a0; font-size: 1.2em; }
+        .endpoint-section { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; margin-bottom: 25px; border-left: 4px solid #ff6b6b; }
+        .endpoint-section.roast { border-left-color: #feca57; }
+        .endpoint-section.compliment { border-left-color: #48dbfb; }
+        h2 { color: #ff6b6b; margin-bottom: 15px; font-size: 1.8em; }
+        .endpoint-section.roast h2 { color: #feca57; }
+        .endpoint-section.compliment h2 { color: #48dbfb; }
+        .endpoint-url { background: #0d1117; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 1.1em; margin: 15px 0; word-break: break-all; }
+        .endpoint-url a { color: #58a6ff; text-decoration: none; }
+        .endpoint-url a:hover { text-decoration: underline; }
+        .response-format { background: #0d1117; padding: 15px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.9em; margin: 15px 0; overflow-x: auto; }
+        .response-format pre { color: #7ee787; }
+        .theme-badge { display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 20px; margin: 5px; font-size: 0.85em; }
+        .themes-container { margin: 15px 0; }
+        .external-api { background: rgba(72, 219, 251, 0.1); border: 1px solid #48dbfb; border-radius: 8px; padding: 15px; margin-top: 15px; }
+        .external-api h3 { color: #48dbfb; margin-bottom: 10px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0; }
+        .stat-card { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; text-align: center; }
+        .stat-number { font-size: 2.5em; font-weight: bold; color: #ff6b6b; }
+        .stat-label { color: #a0a0a0; margin-top: 5px; }
+        .note { background: rgba(254, 202, 87, 0.1); border-left: 4px solid #feca57; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; }
+        .note strong { color: #feca57; }
+        footer { text-align: center; padding: 30px 0; color: #666; border-top: 1px solid #333; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Roast & Compliment API</h1>
+            <p class="subtitle">A free, public API for insults, roasts, and compliments</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card"><div class="stat-number">250+</div><div class="stat-label">Insults</div></div>
+            <div class="stat-card"><div class="stat-number">250+</div><div class="stat-label">Roasts</div></div>
+            <div class="stat-card"><div class="stat-number">250+</div><div class="stat-label">Compliments</div></div>
+            <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Themes</div></div>
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> This API is hosted on GitHub Pages. All responses are random and returned as JSON.
+        </div>
+
+        <div class="endpoint-section">
+            <h2>Random Insult</h2>
+            <p>Returns a random insult from our collection of 250+ unique insults.</p>
+            <div class="endpoint-url"><a href="/random_insult.html" target="_blank">/random_insult.html</a></div>
+            <div class="response-format"><pre>{
+  "id": 1,
+  "insult": "Your the reason my therapist is well fed!",
+  "type": "Savage",
+  "source": "local"
+}</pre></div>
+            <div class="themes-container">
+                <span class="theme-badge">Savage</span>
+                <span class="theme-badge">Tech</span>
+                <span class="theme-badge">Sarcastic</span>
+                <span class="theme-badge">Corporate</span>
+                <span class="theme-badge">Witty</span>
+                <span class="theme-badge">Absurd</span>
+            </div>
+            <div class="external-api">
+                <h3>External API Option</h3>
+                <p>Add <code>?external=true</code> to fetch from external APIs instead:</p>
+                <div class="endpoint-url"><a href="/random_insult.html?external=true" target="_blank">/random_insult.html?external=true</a></div>
+                <p style="margin-top: 10px; font-size: 0.9em;">Sources: Evil Insult Generator, Matt Bas Insult API</p>
+            </div>
+        </div>
+
+        <div class="endpoint-section roast">
+            <h2>Random Roast</h2>
+            <p>Returns a random roast from our collection of 250+ unique roasts.</p>
+            <div class="endpoint-url"><a href="/random_roast.html" target="_blank">/random_roast.html</a></div>
+            <div class="response-format"><pre>{
+  "id": 1,
+  "roast": "You have the energy of a Wi-Fi signal in the basement.",
+  "type": "Tech",
+  "source": "local"
+}</pre></div>
+            <div class="themes-container">
+                <span class="theme-badge">Tech</span>
+                <span class="theme-badge">Savage</span>
+                <span class="theme-badge">Sarcastic</span>
+                <span class="theme-badge">Petty</span>
+                <span class="theme-badge">Witty</span>
+                <span class="theme-badge">Absurd</span>
+            </div>
+            <div class="external-api">
+                <h3>External API Option</h3>
+                <p>Add <code>?external=true</code> to fetch from external APIs instead:</p>
+                <div class="endpoint-url"><a href="/random_roast.html?external=true" target="_blank">/random_roast.html?external=true</a></div>
+            </div>
+        </div>
+
+        <div class="endpoint-section compliment">
+            <h2>Random Compliment</h2>
+            <p>Returns a random compliment from our collection of 250+ unique compliments.</p>
+            <div class="endpoint-url"><a href="/random_complement.html" target="_blank">/random_complement.html</a></div>
+            <div class="response-format"><pre>{
+  "id": 1,
+  "compliment": "You make things better just by being around.",
+  "type": "Sincere",
+  "source": "local"
+}</pre></div>
+            <div class="themes-container">
+                <span class="theme-badge">Sincere</span>
+                <span class="theme-badge">Creative</span>
+                <span class="theme-badge">Empowering</span>
+                <span class="theme-badge">Wholesome</span>
+                <span class="theme-badge">Motivational</span>
+                <span class="theme-badge">Funny</span>
+            </div>
+        </div>
+
+        <div class="endpoint-section">
+            <h2>Response Format</h2>
+            <p>All endpoints return JSON with the following structure:</p>
+            <div class="response-format"><pre>{
+  "id": Number,      // Unique identifier
+  "type": String,    // Theme/category
+  "source": String,  // "local" or "external"
+  // Plus one of: "insult", "roast", or "compliment"
+}</pre></div>
+        </div>
+
+        <div class="endpoint-section">
+            <h2>Usage Examples</h2>
+            <p>JavaScript fetch:</p>
+            <div class="response-format"><pre>fetch('https://yourusername.github.io/repo/random_insult.html')
+  .then(res => res.json())
+  .then(data => console.log(data.insult));</pre></div>
+            <p style="margin-top: 15px;">cURL:</p>
+            <div class="response-format"><pre>curl https://yourusername.github.io/repo/random_roast.html</pre></div>
+        </div>
+
+        <div class="endpoint-section">
+            <h2>Content Policy</h2>
+            <p>This API maintains a family-friendly profanity level. The following are <strong>allowed</strong>:</p>
+            <p>damn, piss, ass, asshole, shit, dick</p>
+            <p style="margin-top: 10px;">All other profanity and slurs are strictly prohibited.</p>
+        </div>
+
+        <footer>
+            <p>Roast &amp; Compliment API - Free to use, no API key required</p>
+        </footer>
+    </div>
+</body>
+</html>
